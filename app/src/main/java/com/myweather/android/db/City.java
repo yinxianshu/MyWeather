@@ -42,6 +42,4 @@ public class City extends LitePalSupport {
     public void setProvinceId(int provinceId) {
         this.provinceId = provinceId;
     }
-
-
 }

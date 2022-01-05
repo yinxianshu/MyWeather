@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!-- 线性布局 -->
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -10,6 +11,9 @@
     <!--
         相对布局
             标题栏：布局高度为actionBar的高度，背景色为colorPrimary。
+                这里之所以要自己定义标题栏，是因为碎片中最好不要直接使用
+                ActionBar或Toolbar，不然在复用的时候可能会出现一些你
+                不想看到的效果。
         -->
     <RelativeLayout
             android:layout_width="match_parent"
@@ -22,8 +26,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:textColor="#fff"
-                android:textSize="20sp"/>
-    
+                android:textSize="20sp" />
+        
         <!-- 执行返回操作 -->
         <Button
                 android:id="@+id/back_button"
@@ -33,7 +37,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:background="@drawable/ic_back"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
     </RelativeLayout>
     <!--
         显示省市县的数据，使用ListView是因为它的每个子项间有一条横线分割，
@@ -42,5 +46,5 @@
     <ListView
             android:id="@+id/list_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 </LinearLayout>

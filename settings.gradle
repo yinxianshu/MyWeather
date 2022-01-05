@@ -8,6 +8,9 @@ dependencyResolutionManagement {
         maven { url 'https://maven.aliyun.com/repository/google/' }
 
     }
+
+
 }
 rootProject.name = "MyWeather"
 include ':app'
+

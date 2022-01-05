@@ -1,11 +1,13 @@
 package com.myweather.android.util;
 
 import android.text.TextUtils;
-import android.util.Log;
 
+
+import com.google.gson.Gson;
 import com.myweather.android.db.City;
 import com.myweather.android.db.County;
 import com.myweather.android.db.Province;
+import com.myweather.android.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -39,6 +41,7 @@ public class Utility {
         }
         return false;
     }
+
     // 解析和保存（省市级服务器接口）返回的市级数据
     public static boolean handleCityResponse(String response, int provinceId) {
         if (!TextUtils.isEmpty(response)) {
@@ -79,5 +82,32 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    /**
+     * 解析天气JSON数据的方法
+     * {
+     *   "status": "ok",
+     *   "basic": {},
+     *   "aqi": {},
+     *   "now": {},
+     *   "suggestion": {},
+     *   "daily_forecast": []
+     * }
+     * 由于我们之前已经按照上面的数据格式定义过相应的GSON实体类，因此只需要通过
+     * 调用fromJson() 方法就能直接将JSON数据转换成Weather 对象了。
+     * @param response
+     * @return
+     */
+    public static Weather handleWeatherResponse(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent, Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

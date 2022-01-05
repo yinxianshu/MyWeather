@@ -4,7 +4,14 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/activity_main.xml" value="0.18034447821681865" />
+        <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/activity_weather.xml" value="0.37083333333333335" />
+        <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/aql_activity_weather.xml" value="0.3567708333333333" />
         <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/choose_area.xml" value="0.3582427536231884" />
+        <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/forecast_activity_weather.xml" value="0.1" />
+        <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/forecast_item_activity_weather.xml" value="0.3567708333333333" />
+        <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/now_activity_weather.xml" value="0.37083333333333335" />
+        <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/suggestion_activity_weather.xml" value="0.3567708333333333" />
+        <entry key="..\:/AboutAndroidDevelopment/AndroidStudioProjects/MyWeather/app/src/main/res/layout/title_activity_weather.xml" value="0.25" />
       </map>
     </option>
   </component>
@@ -13,5 +20,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1" />
+      </ProjectState>
+    </option>
   </component>
 </project>

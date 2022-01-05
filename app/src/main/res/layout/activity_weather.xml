@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    /*
+    由于所有的天气信息都将在同一个界面上显示，因此activity_weather.xml会是一个
+    很长的布局文件。那么为了让里面的代码不至于混乱不堪，这里我准备使用学过的引入布局
+    技术，即将界面的不同部分写在不同的布局文件里面，再通过引入布局的方式集成到
+    activity_weather.xml中，这样整个布局文件就会显得非常工整。
+ */
+ -->
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/purple_500">
+    
+    <!-- 加入每日一图 -->
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/bing_img"
+            android:scaleType="centerCrop" />
+    
+    <!-- 在外面套一个下拉刷新组件 -->
+
+    
+    
+    
+    <!--
+        嵌套一个ScrollView允许我们通过滚动的方式查看屏幕以外的内容
+        android:fitsSystemWindows="true"，表示会为系统状态栏留出空间。
+        -->
+    <ScrollView
+            android:id="@+id/weather_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none"
+            android:overScrollMode="never"
+            android:fitsSystemWindows="true"
+            tools:ignore="UselessParent">
+        
+        <!--
+            ScrollView的内部只允许存在一个直接子布局，因此这里又嵌套了一个垂直方向的
+            LinearLayout，然后在LinearLayout中将刚才定义的所有布局逐个引入。
+                -->
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <include layout="@layout/title_activity_weather" />
+            <include layout="@layout/now_activity_weather" />
+            <include layout="@layout/forecast_activity_weather" />
+            <include layout="@layout/aqi_activity_weather" />
+            <include layout="@layout/suggestion_activity_weather" />
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
